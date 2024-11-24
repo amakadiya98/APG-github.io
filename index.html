@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APG</title>
+  <link href="./assets/css/tailwind.min.css" rel="stylesheet" />
+  <link href="./assets/css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/carousel/owl.carousel.css" />
+  <link rel="stylesheet" href="./assets/css/carousel/owl.theme.default.min.css" />
+</head>
+
+<body>
+  <section class="bg-[url('/assets/images/banner-bg.png')] bg-cover bg-center bg-no-repeat bg-[#f0f5f9]">
+    <!-- HEADER  -->
+    <nav class="header-part">
+      <div class="container mx-auto">
+        <div class="flex items-center justify-between">
+          <div class="flex justify-between items-center lg:w-full py-[30px] max-xs:py-[20px]">
+            <!-- Logo -->
+            <div class="logo-part">
+              <a href="#" class="flex items-center">
+                <img src="./assets/images/brand-logo.svg" alt="Logo"
+                  class="h-[40px] w-[146px] max-xs:w-[150px] max-xs:h-[38px]" />
+              </a>
+            </div>
+            <div class="flex items-center xl:gap-[80px] gap-[30px]">
+              <!-- Primary Navbar items -->
+              <div class="hidden lg:flex items-center xl:gap-[46px] gap-[28px]">
+                <a href="#" class="nav-link text-white xl:text-base text-sm font-medium hover:underline">Products</a>
+                <a href="#" class="nav-link text-white xl:text-base text-sm font-medium hover:underline">
+                  Popular</a>
+                <a href="#"
+                  class="nav-link text-white xl:text-base text-sm font-medium hover:underline">Capabilities</a>
+                <a href="#" class="nav-link text-white xl:text-base text-sm font-medium hover:underline">ESG</a>
+                <a href="#" class="nav-link text-white xl:text-base text-sm font-medium hover:underline">Contact</a>
+              </div>
+              <!-- Secondary Navbar items -->
+              <div class="hidden lg:flex gap-[10px] items-center">
+                <div class="relative w-full">
+                  <input type="text" placeholder="Search..."
+                    class="w-full pr-10 pl-5 py-2 rounded-full bg-[#FFFFFF26] text-white placeholder:text-[#DADADA] xl:placeholder:text-base placeholder:text-sm focus:outline-none border border-[#FFFFFF66] focus:ring-[#FFFFFF]" />
+                  <img src="./assets/images/search.svg" alt="search icon"
+                    class="absolute right-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 h-[16px] w-[16px]" />
+                </div>
+                <div>
+                  <button
+                    class="h-[40px] w-[40px] flex items-center justify-center rounded-full bg-[#FFFFFF26] border border-[#FFFFFF66] transition-transform duration-300 hover:scale-105">
+                    <img src="./assets/images/shopping-bag.svg" alt="shopping-bag" class="h-[18px] w-[18px]" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Mobile menu button -->
+          <div class="lg:hidden flex items-center gap-[10px] mobile-menu-btn">
+            <div class="flex gap-[10px] items-center">
+              <div class="relative h-[40px]">
+                <div
+                  class="flex bg-[#FFFFFF26] border border-[#FFFFFF66] rounded-full max-xs:absolute z-100 right-0 top-0 max-xs:bg-[#337dbe]"
+                  id="search-container">
+                  <div id="search-bar" class="w-0 transition-all duration-300 ease-in-out flex items-center">
+                    <input type="text" placeholder="Search..."
+                      class="w-full h-[30px] bg-transparent border-none text-white placeholder:text-white focus:ring-0 pl-4" />
+                  </div>
+
+                  <div class="h-[38px] min-w-[38px] flex items-center justify-center" id="search-icon">
+                    <img src="./assets/images/search.svg" alt="search icon" class="h-[18px] w-[18px]"
+                      onclick="toggleSearchBar()" />
+                  </div>
+
+                  <div class="h-[38px] min-w-[38px] flex items-center justify-center hidden" id="close-icon">
+                    <img src="./assets/images/cross-icon.svg" alt="close icon" class="h-[18px] w-[18px]"
+                      onclick="toggleSearchBar()" />
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <button
+                  class="h-[40px] w-[40px] flex items-center justify-center rounded-full bg-[#FFFFFF26] border border-[#FFFFFF66]">
+                  <img src="./assets/images/shopping-bag.svg" alt="shopping-bag" class="h-[18px] w-[18px] " />
+                </button>
+              </div>
+            </div>
+            <button
+              class="outline-none mobile-menu-button h-[40px] w-[40px]  flex items-center justify-center rounded-full bg-[#FFFFFF26] border border-[#FFFFFF66]">
+              <svg id="menu-icon" class="h-[18px] w-[18px] text-white block" fill="none" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+
+              <svg id="cross-icon" class="h-[18px] w-[18px]  text-white hidden" fill="none" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- mobile menu -->
+      <div
+        class="hidden mobile-menu mt-6 bg-[#FFFFFF26] backdrop-blur-lg absolute w-full top-[70px] max-xs:top-[50px] h-[calc(100vh-90px)] max-xs:h-[calc(100vh-70px)] z-[100]">
+        <ul class="py-[20px] w-full pl-[16px] md:pl-[40px] sm:pl-[30px]">
+          <li>
+            <a href="#"
+              class="block text-white max-xs:text-sm text-base text-left px-2 py-2 text-black hover:underline">Products</a>
+          </li>
+          <li class="active">
+            <a href="#services" class="block text-white max-xs:text-sm text-base text-left px-2 py-2 hover:underline">
+              Popular</a>
+          </li>
+          <li>
+            <a href="#" class="block text-white max-xs:text-sm text-base px-2 py-2 hover:underline">Capabilities
+              Label</a>
+          </li>
+          <li>
+            <a href="#" class="block text-white max-xs:text-sm text-base text-left px-2 py-2 hover:underline">ESG</a>
+          </li>
+          <li>
+            <a href="#"
+              class="block text-white max-xs:text-sm text-base text-left px-2 py-2 hover:underline">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- BANNER SECTION  -->
+    <div class="banner-section">
+      <div class="container mx-auto">
+        <div class="md:pt-[200px] pt-[100px] md:pb-[240px] pb-[140px]">
+          <h2
+            class="text-white font-bold xl:text-[80px] md:text-[60px] text-[44px] max-xs:text-[34px] xl:leading-[88px] md:leading-[68px] leading-[58px] max-xs:leading-[44px]">
+            Endless <br />
+            Capabilities
+          </h2>
+          <p class="text-white italic md:text-lg text-base max-xs:text-sm xl:mt-[30px] mt-[20px]">
+            Delivering innovative packaging solutions to brands.
+          </p>
+          <div class="xl:mt-[40px] mt-[30px] max-xs:mt-[20px] flex gap-[10px] items-center">
+            <button
+              class="flex gap-[12px] max-xs:gap-[8px] items-center bg-white text-black text-base max-xs:text-sm px-[32px] py-[12px] max-xs:px-[16px] max-xs:py-[8px] rounded-full font-semibold border-[2px] border-white hover:bg-transparent hover:text-white group whitespace-nowrap">
+              Get Started
+              <span class="flex items-center transition-transform duration-300 group-hover:translate-x-2">
+                <img src="./assets/images/black-arrow.svg" alt="black arrow"
+                  class="h-[14px] w-[11px] group-hover:invert" />
+              </span>
+            </button>
+
+            <button
+              class="flex gap-[12px] max-xs:gap-[8px] items-center bg-transparent text-white text-base max-xs:text-sm px-[32px] py-[12px] max-xs:px-[16px] max-xs:py-[8px] rounded-full font-semibold border-[2px] border-white hover:bg-white hover:text-black group whitespace-nowrap">
+              View Products<span
+                class="flex items-center transition-transform duration-300 group-hover:translate-x-2"><img
+                  src="./assets/images/white-arrow.svg" alt="black arrow"
+                  class="h-[14px] w-[11px] group-hover:invert" /></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT SECTION  -->
+  <section
+    class="pt-[80px] max-xs:pt-[40px] bg-[url('/assets/images/product-section-bg.png')] bg-cover bg-center bg-no-repeat lg:pb-[280px] pb-[220px] max-xs:pb-[150px] relative">
+    <img src="./assets/images/design-left.svg" alt="left-design"
+      class="2xl:bottom-[-6%] xl:bottom-[-5%] md:bottom-[-1%] sm:bottom-0 bottom-[2%] max-md:scale-[0.8] md:left-[-4%] sm:left-[-4%] left-[-5%] max-xs:hidden absolute" />
+    <img src="./assets/images/design-right.svg" alt="right-design"
+      class="2xl:bottom-[7%] xl:bottom-[6%] md:bottom-[5%] sm:bottom-[4%] bottom-[4.5%] md:right-[0%] sm:right-[-4%] right-[-5%] max-md:scale-[0.8] max-xs:hidden absolute" />
+    <div class="container mx-auto">
+      <img src="./assets/images/logos.png" alt="logos" class="mx-auto max-md:w-[70%] max-xs:w-[90%]" />
+      <div class="mt-[80px] max-xs:mt-[40px]">
+        <div class="flex flex-wrap justify-center gap-4">
+          <div
+            class="xl:w-[calc(100%/8-1rem)] sm:w-[calc(100%/4-1rem)] w-[calc(100%/2-1rem)] p-[28px] max-xs:p-[16px] bg-white rounded-lg shadow-md flex flex-col justify-end items-center relative"
+            style="box-shadow: 1.5px 2.6px 15.49px 0px #0000001a">
+            <img src="./assets/images/products/product1.svg" alt="product" />
+            <p class="text-black font-regular xl:text-lg text-base max-xs:text-sm whitespace-nowrap mt-[20px]">
+              Airless
+            </p>
+          </div>
+          <div
+            class="xl:w-[calc(100%/8-1rem)] sm:w-[calc(100%/4-1rem)] w-[calc(100%/2-1rem)] p-[28px] max-xs:p-[16px] bg-white rounded-lg shadow-md flex flex-col justify-end items-center relative"
+            style="box-shadow: 1.5px 2.6px 15.49px 0px #0000001a">
+            <img src="./assets/images/products/product2.svg" alt="product" />
+            <p class="text-black font-regular xl:text-lg text-base max-xs:text-sm whitespace-nowrap mt-[20px]">
+              Bottles
+            </p>
+          </div>
+          <div
+            class="xl:w-[calc(100%/8-1rem)] sm:w-[calc(100%/4-1rem)] w-[calc(100%/2-1rem)] p-[28px] max-xs:p-[16px] bg-white rounded-lg shadow-md flex flex-col justify-end items-center relative"
+            style="box-shadow: 1.5px 2.6px 15.49px 0px #0000001a">
+            <img src="./assets/images/products/product3.svg" alt="product" />
+            <p class="text-black font-regular xl:text-lg text-base max-xs:text-sm whitespace-nowrap mt-[20px]">
+              Droppers
+            </p>
+          </div>
+          <div
+            class="xl:w-[calc(100%/8-1rem)] sm:w-[calc(100%/4-1rem)] w-[calc(100%/2-1rem)] p-[28px] max-xs:p-[16px] bg-white rounded-lg shadow-md flex flex-col justify-end items-center relative"
+            style="box-shadow: 1.5px 2.6px 15.49px 0px #0000001a">
+            <img src="./assets/images/products/product4.svg" alt="product" />
+            <p class="text-black font-regular xl:text-lg text-base max-xs:text-sm whitespace-nowrap mt-[20px]">
+              Jars
+            </p>
+          </div>
+          <div
+            class="xl:w-[calc(100%/8-1rem)] sm:w-[calc(100%/4-1rem)] w-[calc(100%/2-1rem)] p-[28px] max-xs:p-[16px] bg-white rounded-lg shadow-md flex flex-col justify-end items-center relative"
+            style="box-shadow: 1.5px 2.6px 15.49px 0px #0000001a">
+            <img src="./assets/images/products/product5.svg" alt="product" />
+            <p class="text-black font-regular xl:text-lg text-base max-xs:text-sm whitespace-nowrap mt-[20px]">
+              Tubes
+            </p>
+          </div>
+          <div
+            class="xl:w-[calc(100%/8-1rem)] sm:w-[calc(100%/4-1rem)] w-[calc(100%/2-1rem)] p-[28px] max-xs:p-[16px] bg-white rounded-lg shadow-md flex flex-col justify-end items-center relative"
+            style="box-shadow: 1.5px 2.6px 15.49px 0px #0000001a">
+            <img src="./assets/images/products/product6.svg" alt="product" />
+            <p class="text-black font-regular xl:text-lg text-base max-xs:text-sm whitespace-nowrap mt-[20px]">
+              Deodorant
+            </p>
+          </div>
+          <div
+            class="xl:w-[calc(100%/8-1rem)] sm:w-[calc(100%/4-1rem)] w-[calc(100%/2-1rem)] p-[28px] max-xs:p-[16px] bg-white rounded-lg shadow-md flex flex-col justify-end items-center relative"
+            style="box-shadow: 1.5px 2.6px 15.49px 0px #0000001a">
+            <img src="./assets/images/products/product7.svg" alt="product" />
+            <p class="text-black font-regular xl:text-lg text-base max-xs:text-sm whitespace-nowrap mt-[20px]">
+              Lip Gloss
+            </p>
+            <img src="./assets/images/star.png" alt="star"
+              class="absolute top-4 xl:right-7 lg:right-[28%] right-[14%]" />
+          </div>
+          <div
+            class="xl:w-[calc(100%/8-1rem)] sm:w-[calc(100%/4-1rem)] w-[calc(100%/2-1rem)] p-[28px] max-xs:p-[16px] bg-white rounded-lg shadow-md flex flex-col justify-end items-center relative"
+            style="box-shadow: 1.5px 2.6px 15.49px 0px #0000001a">
+            <img src="./assets/images/products/product8.svg" alt="product" />
+            <p class="text-black font-regular xl:text-lg text-base max-xs:text-sm whitespace-nowrap mt-[20px]">
+              Beauty Stick
+            </p>
+          </div>
+          <div
+            class="xl:w-[calc(100%/8-1rem)] sm:w-[calc(100%/4-1rem)] w-[calc(100%/2-1rem)] p-[28px] max-xs:p-[16px] bg-white rounded-lg shadow-md flex flex-col justify-end items-center relative"
+            style="box-shadow: 1.5px 2.6px 15.49px 0px #0000001a">
+            <img src="./assets/images/products/product9.svg" alt="product" />
+            <p class="text-black font-regular xl:text-lg text-base max-xs:text-sm whitespace-nowrap mt-[20px]">
+              Lipstick
+            </p>
+            <img src="./assets/images/star.png" alt="star"
+              class="absolute top-4 xl:right-7 lg:right-[28%] right-[14%]" />
+          </div>
+          <div
+            class="xl:w-[calc(100%/8-1rem)] sm:w-[calc(100%/4-1rem)] w-[calc(100%/2-1rem)] p-[28px] max-xs:p-[16px] bg-white rounded-lg shadow-md flex flex-col justify-end items-center relative"
+            style="box-shadow: 1.5px 2.6px 15.49px 0px #0000001a">
+            <img src="./assets/images/products/product10.svg" alt="product" />
+            <p class="text-black font-regular xl:text-lg text-base max-xs:text-sm whitespace-nowrap mt-[20px]">
+              Compacts
+            </p>
+          </div>
+          <div
+            class="xl:w-[calc(100%/8-1rem)] sm:w-[calc(100%/4-1rem)] w-[calc(100%/2-1rem)] p-[28px] max-xs:p-[16px] bg-white rounded-lg shadow-md flex flex-col justify-end items-center relative"
+            style="box-shadow: 1.5px 2.6px 15.49px 0px #0000001a">
+            <img src="./assets/images/products/product11.svg" alt="product" />
+            <p class="text-black font-regular xl:text-lg text-base max-xs:text-sm whitespace-nowrap mt-[20px]">
+              Palettes
+            </p>
+          </div>
+          <div
+            class="xl:w-[calc(100%/8-1rem)] sm:w-[calc(100%/4-1rem)] w-[calc(100%/2-1rem)] p-[28px] max-xs:p-[16px] bg-white rounded-lg shadow-md flex flex-col justify-end items-center relative"
+            style="box-shadow: 1.5px 2.6px 15.49px 0px #0000001a">
+            <img src="./assets/images/products/product12.svg" alt="product" />
+            <p class="text-black font-regular xl:text-lg text-base max-xs:text-sm whitespace-nowrap mt-[20px]">
+              Pumps
+            </p>
+          </div>
+          <div
+            class="xl:w-[calc(100%/8-1rem)] sm:w-[calc(100%/4-1rem)] w-[calc(100%/2-1rem)] p-[28px] max-xs:p-[16px] bg-white rounded-lg shadow-md flex flex-col justify-end items-center relative"
+            style="box-shadow: 1.5px 2.6px 15.49px 0px #0000001a">
+            <img src="./assets/images/products/product13.svg" alt="product" />
+            <p class="text-black font-regular xl:text-lg text-base max-xs:text-sm whitespace-nowrap mt-[20px]">
+              Sprayers
+            </p>
+          </div>
+          <div
+            class="xl:w-[calc(100%/8-1rem)] sm:w-[calc(100%/4-1rem)] w-[calc(100%/2-1rem)] p-[28px] max-xs:p-[16px] bg-white rounded-lg shadow-md flex flex-col justify-end items-center relative"
+            style="box-shadow: 1.5px 2.6px 15.49px 0px #0000001a">
+            <img src="./assets/images/products/product14.svg" alt="product" />
+            <p class="text-black font-regular xl:text-lg text-base max-xs:text-sm whitespace-nowrap mt-[20px]">
+              Sustainable
+            </p>
+          </div>
+          <div
+            class="xl:w-[calc(100%/8-1rem)] sm:w-[calc(100%/4-1rem)] w-[calc(100%/2-1rem)] p-[28px] max-xs:p-[16px] bg-white rounded-lg shadow-md flex flex-col justify-end items-center relative"
+            style="box-shadow: 1.5px 2.6px 15.49px 0px #0000001a">
+            <img src="./assets/images/products/product15.svg" alt="product" />
+            <p class="text-black font-regular xl:text-lg text-base max-xs:text-sm whitespace-nowrap mt-[20px]">
+              Ecommerce
+            </p>
+          </div>
+          <div
+            class="xl:w-[calc(100%/8-1rem)] sm:w-[calc(100%/4-1rem)] w-[calc(100%/2-1rem)] p-[28px] max-xs:p-[16px] bg-white rounded-lg shadow-md flex flex-col justify-end items-center relative"
+            style="box-shadow: 1.5px 2.6px 15.49px 0px #0000001a">
+            <img src="./assets/images/products/product16.svg" alt="product" />
+            <p class="text-black font-regular xl:text-lg text-base max-xs:text-sm whitespace-nowrap mt-[20px]">
+              New Solutions
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAND SECTION  -->
+
+  <section class="md:pt-[50px] pt-0 md:pb-[100px] pb-[60px]">
+    <div class="container mx-auto">
+      <div class="max-w-[90%] mx-auto bg-red">
+        <h4 class="text-black font-semibold xl:text-[44px] md:text-[36px] text-[28px] max-xs:text-[24px] text-center">
+          Trusted By The Best
+        </h4>
+        <div class="mt-[30px]">
+          <div class="flex w-full flex-wrap justify-center">
+            <div
+              class="lg:w-[20%] sm:w-[calc(100%/3)] w-[calc(100%/2)] md:h-auto h-[150px] max-xs:h-[100px] lg:border-r lg:border-b lg:border-[#E8E8E8] xl:p-4 p-6 max-xs:p-8 flex justify-center items-center">
+              <div class="w-[120px]">
+                <img src="./assets/images/brands/brand1.svg" alt="Brand 1" class="w-full h-auto" />
+              </div>
+            </div>
+            <div
+              class="lg:w-[20%] sm:w-[calc(100%/3)] w-[calc(100%/2)] md:h-auto h-[150px] max-xs:h-[100px] lg:border-r lg:border-b lg:border-[#E8E8E8] xl:p-4 p-6 max-xs:p-8 flex justify-center items-center">
+              <div class="w-[120px]">
+                <img src="./assets/images/brands/brand2.svg" alt="Brand 2" class="w-full h-auto" />
+              </div>
+            </div>
+            <div
+              class="lg:w-[20%] sm:w-[calc(100%/3)] w-[calc(100%/2)] md:h-auto h-[150px] max-xs:h-[100px] lg:border-r lg:border-b lg:border-[#E8E8E8] xl:p-4 p-6 max-xs:p-8 flex justify-center items-center">
+              <div class="w-[98px]">
+                <img src="./assets/images/brands/brand3.svg" alt="Brand 3" class="w-full h-auto" />
+              </div>
+            </div>
+            <div
+              class="lg:w-[20%] sm:w-[calc(100%/3)] w-[calc(100%/2)] md:h-auto h-[150px] max-xs:h-[100px] lg:border-r lg:border-b lg:border-[#E8E8E8] xl:p-4 p-6 max-xs:p-8 flex justify-center items-center">
+              <div class="w-[110px]">
+                <img src="./assets/images/brands/brand4.svg" alt="Brand 4" class="w-full h-auto" />
+              </div>
+            </div>
+            <div
+              class="lg:w-[20%] sm:w-[calc(100%/3)] w-[calc(100%/2)] md:h-auto h-[150px] max-xs:h-[100px] lg:border-b lg:border-[#E8E8E8] xl:p-4 p-6 max-xs:p-8 flex justify-center items-center">
+              <div class="w-[126px]">
+                <img src="./assets/images/brands/brand5.png" alt="Brand 5" class="w-full h-auto" />
+              </div>
+            </div>
+
+            <div
+              class="lg:w-[20%] sm:w-[calc(100%/3)] w-[calc(100%/2)] md:h-auto h-[150px] max-xs:h-[100px] lg:border-r lg:border-[#E8E8E8] xl:p-4 p-6 max-xs:p-8 flex justify-center items-center">
+              <div class="w-[170px]">
+                <img src="./assets/images/brands/brand6.svg" alt="Brand 6" class="w-full h-auto" />
+              </div>
+            </div>
+            <div
+              class="lg:w-[20%] sm:w-[calc(100%/3)] w-[calc(100%/2)] md:h-auto h-[150px] max-xs:h-[100px] lg:border-r lg:border-[#E8E8E8] xl:p-4 p-6 max-xs:p-8 flex justify-center items-center">
+              <div class="w-[150px]">
+                <img src="./assets/images/brands/brand7.svg" alt="Brand 7" class="w-full h-auto" />
+              </div>
+            </div>
+            <div
+              class="lg:w-[20%] sm:w-[calc(100%/3)] w-[calc(100%/2)] md:h-auto h-[150px] max-xs:h-[100px] lg:border-r lg:border-[#E8E8E8] xl:p-4 p-6 max-xs:p-8 flex justify-center items-center">
+              <div class="w-[160px]">
+                <img src="./assets/images/brands/brand8.svg" alt="Brand 8" class="w-full h-auto" />
+              </div>
+            </div>
+            <div
+              class="lg:w-[20%] sm:w-[calc(100%/3)] w-[calc(100%/2)] md:h-auto h-[150px] max-xs:h-[100px] lg:border-r lg:border-[#E8E8E8] xl:p-4 p-6 max-xs:p-8 flex justify-center items-center">
+              <div class="w-[145px]">
+                <img src="./assets/images/brands/brand9.svg" alt="Brand 9" class="w-full h-auto" />
+              </div>
+            </div>
+            <div
+              class="lg:w-[20%] sm:w-[calc(100%/3)] w-[calc(100%/2)] md:h-auto h-[150px] max-xs:h-[100px] xl:p-4 p-6 max-xs:p-8 flex justify-center items-center">
+              <div class="w-[84px]">
+                <img src="./assets/images/brands/brand10.png" alt="Brand 10" class="w-full h-auto" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="group flex gap-[12px] max-xs:gap-[8px] md:mt-[40px] mt-[20px] max-xs:mt-[24px] items-center bg-transparent text-black mx-auto text-base max-xs:text-sm px-[32px] py-[12px] max-xs:px-[16px] max-xs:py-[8px] rounded-full font-semibold border-[2px] border-apg-gray transition-transform duration-300">
+        Our Clients
+        <span class="flex items-center transition-transform duration-300 group-hover:translate-x-2">
+          <img src="./assets/images/black-arrow.svg" alt="black arrow" class="h-[14px] w-[11px]" />
+        </span>
+      </button>
+    </div>
+  </section>
+
+  <!-- SLIDER SECTION  -->
+  <div class="md:pb-[160px] pb-[80px]">
+    <div class="owl-carousel">
+      <div class="item"><img src="./assets/images/slider/slider-img.png" alt="slider-img" /></div>
+      <div class="item"><img src="./assets/images/slider/slider-img.png" alt="slider-img" /></div>
+      <div class="item"><img src="./assets/images/slider/slider-img.png" alt="slider-img" /></div>
+      <div class="item"><img src="./assets/images/slider/slider-img.png" alt="slider-img" /></div>
+      <div class="item"><img src="./assets/images/slider/slider-img.png" alt="slider-img" /></div>
+    </div>
+  </div>
+
+  <!-- CARD SECTION  -->
+  <section class="bg-[url('/assets/images/card-section-bg.png')] bg-cover bg-center bg-no-repeat relative">
+    <img src="./assets/images/design-left.svg" alt="left-design"
+      class="2xl:bottom-[-4.4%] xl:bottom-[-3%] lg:bottom-[-4.8%] bottom-[-5%] left-0 absolute max-md:hidden" />
+    <img src="./assets/images/design-right.svg" alt="right-design"
+      class="bottom-[5.1%] right-0 absolute max-md:hidden" />
+    <img src="./assets/images/design-left.svg" alt="left-design"
+      class="2xl:top-[5%] xl:top-[4.3%] lg:top-[3%] top-[2.8%] left-0 absolute max-md:hidden" />
+    <img src="./assets/images/design-right.svg" alt="right-design" class="top-[-4.3%] right-0 absolute max-md:hidden" />
+    <div class="container mx-auto">
+      <div
+        class="flex items-center justify-center 2xl:gap-[100px] lg:gap-[50px] md:gap-[30px] gap-[40px] md:flex-nowrap flex-wrap">
+        <div>
+          <div class="relative rounded-[24px] max-md:w-[80%] max-md:mx-auto max-xs:w-[90%]">
+            <img src="./assets/images/cards/card1.png" alt="card-img" class="2xl:max-w-[580px]" />
+            <div
+              class="absolute xl:bottom-[48px] xl:right-[48px] xl:left-[48px] bottom-[20px] right-[20px] left-[20px]">
+              <h4
+                class="text-center xl:text-[35px] md:text-[28px] text-[24px] max-xs:text-[20px] font-semibold text-black">
+                Custom Packaging Solutions
+              </h4>
+              <p
+                class="text-[#333333] lg:text-base text-sm font-regular italic text-center md:mt-[12px] mt-[8px] leading-[24px]">
+                Think outside the bottle: APG offers innovative packaging
+                solutions to meet the market demands of our clients.
+              </p>
+              <button
+                class="group flex gap-[12px] max-xs:gap-[8px] md:mt-[20px] mt-[8px] items-center bg-transparent text-black mx-auto max-xs:text-sm px-[32px] py-[12px] max-xs:px-[16px] max-xs:py-[8px] rounded-full font-semibold border-[2px] border-apg-gray transition-transform duration-300">
+                Learn More
+                <span class="flex items-center transition-transform duration-300 group-hover:translate-x-2">
+                  <img src="./assets/images/black-arrow.svg" alt="black arrow" class="h-[14px] w-[11px]" />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col justify-center 2xl:gap-[100px] lg:gap-[50px] md:gap-[30px] gap-[40px]">
+          <div class="relative rounded-[24px] max-md:w-[80%] max-md:mx-auto max-xs:w-[90%]">
+            <img src="./assets/images/cards/card2.png" alt="card-img" class="2xl:max-w-[580px]" />
+            <div
+              class="absolute xl:bottom-[48px] xl:right-[48px] xl:left-[48px] bottom-[20px] right-[20px] left-[20px]">
+              <h4
+                class="text-center xl:text-[35px] md:text-[28px] text-[24px] max-xs:text-[20px] font-semibold text-black">
+                The Infinity Pump Series
+              </h4>
+              <p
+                class="text-[#333333] lg:text-base text-sm font-regular italic text-center md:mt-[12px] mt-[8px] leading-[24px]">
+                APG is proud to announce our patented all plastic recyclable
+                lotion pump, foamer, trigger, fine-mist sprayer & airless
+                pump.
+              </p>
+              <button
+                class="group flex gap-[12px] max-xs:gap-[8px] md:mt-[20px] mt-[8px] items-center bg-transparent text-black mx-auto max-xs:text-sm px-[32px] py-[12px] max-xs:px-[16px] max-xs:py-[8px] rounded-full font-semibold border-[2px] border-apg-gray transition-transform duration-300">
+                Learn More
+                <span class="flex items-center transition-transform duration-300 group-hover:translate-x-2">
+                  <img src="./assets/images/black-arrow.svg" alt="black arrow" class="h-[14px] w-[11px]" />
+                </span>
+              </button>
+            </div>
+          </div>
+          <div class="relative rounded-[24px] max-md:w-[80%] max-md:mx-auto max-xs:w-[90%]">
+            <img src="./assets/images/cards/card3.png" alt="card-img" class="2xl:max-w-[580px]" />
+            <div
+              class="absolute xl:bottom-[48px] xl:right-[48px] xl:left-[48px] bottom-[20px] right-[20px] left-[20px]">
+              <h4
+                class="text-center xl:text-[35px] md:text-[28px] text-[24px] max-xs:text-[20px] font-semibold text-black">
+                Sustainable Packaging
+              </h4>
+              <p
+                class="text-[#333333] lg:text-base text-sm font-regular italic text-center md:mt-[12px] mt-[8px] leading-[24px]">
+                APG is committed to the environment with sustainable packaging
+                solutions like refillable, bio-plastic, PCR, and
+                monomaterials.
+              </p>
+              <button
+                class="group flex gap-[12px] max-xs:gap-[8px] md:mt-[20px] mt-[8px] items-center bg-transparent text-black mx-auto max-xs:text-sm px-[32px] py-[12px] max-xs:px-[16px] max-xs:py-[8px] rounded-full font-semibold border-[2px] border-apg-gray transition-transform duration-300">
+                Learn More
+                <span class="flex items-center transition-transform duration-300 group-hover:translate-x-2">
+                  <img src="./assets/images/black-arrow.svg" alt="black arrow" class="h-[14px] w-[11px]" />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP SECTION  -->
+  <section class="md:pt-[110px] pt-[80px]">
+    <div class="container">
+      <h6 class="md:text-[22px] sm:text-lg text-base text-primary font-semibold text-center">
+        Our Worldwide Locations
+      </h6>
+      <h4
+        class="lg:mt-[20px] mt-[10px] text-black font-semibold xl:text-[44px] md:text-[36px] text-[28px] max-xs:text-[24px] text-center">
+        Global Footprint
+      </h4>
+      <p class="text-apg-gray font-regular md:text-xl sm:text-base text-sm text-center lg:mt-[20px] mt-[10px]">
+        Our unique positioning allows us to innovate manufacture, & deliver
+        faster.
+      </p>
+    </div>
+    <div
+      class="bg-[url('/assets/images/bg-3.png')] bg-cover bg-center bg-no-repeat lg:pb-[700px] md:pb-[400px] pb-[300px] max-xs:pb-[160px] relative">
+      <img src="./assets/images/design-left.svg" alt="left-design"
+        class="2xl:bottom-[-8%] xl:bottom-[-6%] lg:bottom-[-5%] md:bottom-[-11%] sm:bottom-[-15%] bottom-[-14%] max-md:scale-[0.8] md:left-0 sm:left-[-4%] left-[-5%] absolute max-xs:hidden" />
+      <img src="./assets/images/design-right.svg" alt="right-design"
+        class="2xl:bottom-[8%] xl:bottom-[7%] lg:bottom-[6%] sm:bottom-[0%] md:bottom-[4%] bottom-[-1%] max-md:scale-[0.8] sm:right-[-4%] right-[-5%] md:right-0 absolute max-xs:hidden" />
+      <button
+        class="group flex gap-[12px] max-xs:gap-[8px] mt-[20px] items-center bg-transparent text-black mx-auto text-base max-xs:text-sm px-[32px] py-[12px] max-xs:px-[16px] max-xs:py-[8px] rounded-full font-semibold border-[2px] border-apg-gray transition-transform duration-300">
+        Learn More
+        <span class="flex items-center transition-transform duration-300 group-hover:translate-x-2">
+          <img src="./assets/images/black-arrow.svg" alt="black arrow" class="h-[14px] w-[11px]" />
+        </span>
+      </button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container mx-auto">
+      <div class="mt-[80px] max-xs:mt-[40px]">
+        <div class="grid grid-cols-12 gap-x-4 sm:gap-y-12 gap-y-8 max-xs:gap-x-0">
+          <div class="lg:col-span-2 col-span-4 max-xs:col-span-12">
+            <h6 class="font-semibold text-black text-lg">Quick Links</h6>
+            <ul class="lg:mt-[16px] mt-[8px] text-apg-gray md:text-base text-sm font-regular">
+              <li class="lg:pt-[16px] pt-[8px]">
+                <a href="#" class="hover:underline">Contact Us</a>
+              </li>
+              <li class="lg:pt-[16px] pt-[8px]">
+                <a href="#" class="hover:underline">Catalog</a>
+              </li>
+              <li class="lg:pt-[16px] pt-[8px]">
+                <a href="#" class="hover:underline">Why APG</a>
+              </li>
+              <li class="lg:pt-[16px] pt-[8px]">
+                <a href="#" class="hover:underline">Account</a>
+              </li>
+              <li class="lg:pt-[16px] pt-[8px]">
+                <a href="#" class="hover:underline">Blog</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="lg:col-span-2 col-span-4 max-xs:col-span-12">
+            <h6 class="font-semibold text-black text-lg">Skincare</h6>
+            <ul class="lg:mt-[16px] mt-[8px] text-apg-gray md:text-base text-sm font-regular">
+              <li class="lg:pt-[16px] pt-[8px]">
+                <a href="#" class="hover:underline">Airless </a>
+              </li>
+              <li class="lg:pt-[16px] pt-[8px]">
+                <a href="#" class="hover:underline">Bottles</a>
+              </li>
+              <li class="lg:pt-[16px] pt-[8px]">
+                <a href="#" class="hover:underline">Droppers</a>
+              </li>
+              <li class="lg:pt-[16px] pt-[8px]">
+                <a href="#" class="hover:underline">Jars</a>
+              </li>
+              <li class="lg:pt-[16px] pt-[8px]">
+                <a href="#" class="hover:underline">Tubes</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="lg:col-span-2 col-span-4 max-xs:col-span-12">
+            <h6 class="font-semibold text-black text-lg">Cosmetics</h6>
+            <ul class="lg:mt-[16px] mt-[8px] text-apg-gray md:text-base text-sm font-regular">
+              <li class="lg:pt-[16px] pt-[8px]">
+                <a href="#" class="hover:underline">Compacts </a>
+              </li>
+              <li class="lg:pt-[16px] pt-[8px]">
+                <a href="#" class="hover:underline">Lip Gloss</a>
+              </li>
+              <li class="lg:pt-[16px] pt-[8px]">
+                <a href="#" class="hover:underline">Lip Stick</a>
+              </li>
+              <li class="lg:pt-[16px] pt-[8px]">
+                <a href="#" class="hover:underline">Palettes</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="lg:col-span-3 sm:col-span-4 col-span-12">
+            <h6 class="font-semibold text-black text-lg">Information</h6>
+            <ul class="lg:mt-[16px] mt-[8px] text-apg-gray md:text-base text-sm font-regular">
+              <li class="lg:pt-[16px] pt-[8px]">
+                <a href="#" class="hover:underline">Careers & Job Openings
+                </a>
+              </li>
+              <li class="lg:pt-[16px] pt-[8px]">
+                <a href="#" class="hover:underline">Skincare Packaging</a>
+              </li>
+              <li class="lg:pt-[16px] pt-[8px]">
+                <a href="#" class="hover:underline">Cosmetic Packaging</a>
+              </li>
+              <li class="lg:pt-[16px] pt-[8px]">
+                <a href="#" class="hover:underline">Airless Pump Bottles</a>
+              </li>
+              <li class="lg:pt-[16px] pt-[8px]">
+                <a href="#" class="hover:underline">Cosmetic Bottles</a>
+              </li>
+              <li class="lg:pt-[16px] pt-[8px]">
+                <a href="#" class="hover:underline">Cosmetic Tubes</a>
+              </li>
+              <li class="lg:pt-[16px] pt-[8px]">
+                <a href="#" class="hover:underline">Eco-Friendly Packaging</a>
+              </li>
+              <li class="lg:pt-[16px] pt-[8px]">
+                <a href="#" class="hover:underline">Eyeliner Packaging</a>
+              </li>
+              <li class="lg:pt-[16px] pt-[8px]">
+                <a href="#" class="hover:underline">Packaging Companies</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="lg:col-span-3 sm:col-span-8 col-span-12">
+            <h6 class="font-semibold text-black text-lg">Contact</h6>
+            <p class="text-apg-gray md:text-base text-sm font-regular italic lg:mt-[16px] mt-[8px]">
+              1350 Mountain View Circle, Azusa, CA 91702
+            </p>
+            <p class="text-apg-gray md:text-base text-sm font-regular lg:mt-[16px] mt-[8px] italic">
+              25925 Commerce Drive, Defiance, OH 43512
+            </p>
+            <h6 class="font-semibold text-black text-base mt-[16px]">
+              Open Hours:
+            </h6>
+            <p class="text-apg-gray md:text-base text-sm font-regular italic lg:mt-[16px] mt-[8px]">
+              Monday to Friday: 8:00AM - 5:00PM
+            </p>
+            <h6 class="font-semibold text-black text-base mt-[16px]">
+              Phone:
+            </h6>
+            <p class="text-apg-gray md:text-base text-sm font-regular italic lg:mt-[16px] mt-[8px]">
+              OFFICE: (626) 385-5858
+            </p>
+            <p class="text-apg-gray md:text-base text-sm font-regular italic lg:mt-[16px] mt-[8px]">
+              FAX: (626) 385-5848
+            </p>
+            <h6 class="font-semibold text-black text-base mt-[16px]">
+              Email:
+            </h6>
+            <p class="text-apg-gray md:text-base text-sm font-regular italic lg:mt-[16px] mt-[8px]">
+              sales@apackaginggroup.com
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="my-[50px]">
+        <img src="./assets/images/logos.png" alt="logos" class="mx-auto max-md:w-[70%] max-xs:w-[90%]" />
+      </div>
+    </div>
+
+    <div class="py-[30px] bg-[#E2EDF1]">
+      <div class="container mx-auto">
+        <p class="text-apg-gray md:text-base text-sm font-medium mx-auto text-center">
+          ©2022 APackaging Group. We Are Not Related to Arminak and Associates
+          Terms & Conditions of Sale Technology Transfer Liability Release
+          Waiver erms & Conditions for Suppliers
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/Js/tailwind.js"></script>
+  <script src="./assets/Js/jquery.js"></script>
+  <script src="./assets/Js/owl.carousel.min.js"></script>
+  <script src="./assets/Js/index.js"></script>
+</body>
+
+</html>
