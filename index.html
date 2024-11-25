@@ -31,23 +31,117 @@
                 <a href="#" class="nav-link text-white xl:text-base text-sm font-medium hover:underline">Products</a>
                 <a href="#" class="nav-link text-white xl:text-base text-sm font-medium hover:underline">
                   Popular</a>
-                <a href="#"
-                  class="nav-link text-white xl:text-base text-sm font-medium hover:underline">Capabilities</a>
+                <a>
+                  <!-- Main Dropdown -->
+                  <details id="mainDropdown" class="relative">
+                    <summary class="flex items-center cursor-pointer hover:!bg-transparent">
+                      <span
+                        class="nav-link text-white xl:text-base text-sm font-medium hover:underline">Capabilities</span>
+                      <div class="ml-2 w-4 h-4 transition-transform transform rotate-0" id="chevronWrapper1">
+                        <img src="./assets/images/chevron-right.svg" alt="chevron right" />
+                      </div>
+                    </summary>
+                    <ul
+                      class="absolute top-[40px] right-[-70%] py-4 px-2 rounded-[18px] bg-white w-[280px] border-t-[2px] border-t-[#32D5ED]">
+                      <img src="./assets/images/Triangle.svg" class="absolute mt-[-26px] right-[48%]">
+                      <li>
+                        <!-- Nested Dropdown 1 -->
+                        <details id="nestedDropdown1">
+                          <summary
+                            class="flex items-center justify-between pl-[10px] pr-[20px] py-[16px] cursor-pointer rounded-lg hover:bg-[#1FA1DC] hover:text-white">
+                            <span class="font-medium text-sm">Custom Decorations</span>
+                            <div class="ml-2 w-4 h-4 transition-transform transform rotate-0" id="chevronWrapper2">
+                              <img src="./assets/images/chevron-right-black.svg" alt="chevron right" class="chevron" />
+                            </div>
+                          </summary>
+                          <div class="bg-white py-2 px-2">
+                            <p class="text-black text-sm text-medium">Content for Custom Decorations</p>
+                          </div>
+                        </details>
+                      </li>
+                      <li>
+                        <!-- Nested Dropdown 2 -->
+                        <details id="nestedDropdown2">
+                          <summary
+                            class="flex items-center justify-between pl-[10px] pr-[20px] py-[16px] cursor-pointer rounded-lg hover:bg-[#1FA1DC] hover:text-white">
+                            <span class="font-medium text-sm">Injection Molding</span>
+                            <div class="ml-2 w-4 h-4 transition-transform transform rotate-0" id="chevronWrapper3">
+                              <img src="./assets/images/chevron-right-black.svg" alt="chevron right" class="chevron" />
+                            </div>
+                          </summary>
+                          <div class="bg-white py-2 px-2">
+                            <p class="text-black text-sm text-medium">Content for Injection Molding</p>
+                          </div>
+                        </details>
+                      </li>
+                      <li>
+                        <!-- Nested Dropdown 3 -->
+                        <details id="nestedDropdown3">
+                          <summary
+                            class="flex items-center justify-between pl-[10px] pr-[20px] py-[16px] cursor-pointer rounded-lg hover:bg-[#1FA1DC] hover:text-white">
+                            <span class="font-medium text-sm">APG Capabilities</span>
+                            <div class="ml-2 w-4 h-4 transition-transform transform rotate-0" id="chevronWrapper4">
+                              <img src="./assets/images/chevron-right-black.svg" alt="chevron right" class="chevron" />
+                            </div>
+                          </summary>
+                          <div class="bg-white py-2 px-2">
+                            <p class="text-black text-sm text-medium">Content for APG Capabilities</p>
+                          </div>
+                        </details>
+                      </li>
+                      <li>
+                        <!-- Nested Dropdown 4 -->
+                        <details id="nestedDropdown4">
+                          <summary
+                            class="flex items-center justify-between pl-[10px] pr-[20px] py-[16px] cursor-pointer rounded-lg hover:bg-[#1FA1DC] hover:text-white">
+                            <span class="font-medium text-sm">Innovation & Technology</span>
+                            <div class="ml-2 w-4 h-4 transition-transform transform rotate-0" id="chevronWrapper5">
+                              <img src="./assets/images/chevron-right-black.svg" alt="chevron right" class="chevron" />
+                            </div>
+                          </summary>
+                          <div class="bg-white py-2 px-2">
+                            <p class="text-black text-sm text-medium">Content for Innovation & Technology</p>
+                          </div>
+                        </details>
+                      </li>
+                      <li>
+                        <!-- Nested Dropdown 5 -->
+                        <details id="nestedDropdown5">
+                          <summary
+                            class="flex items-center justify-between pl-[10px] pr-[20px] py-[16px] cursor-pointer rounded-lg hover:bg-[#1FA1DC] hover:text-white">
+                            <span class="font-medium text-sm">Sourcing & Production</span>
+                            <div class="ml-2 w-4 h-4 transition-transform transform rotate-0" id="chevronWrapper6">
+                              <img src="./assets/images/chevron-right-black.svg" alt="chevron right" class="chevron" />
+                            </div>
+                          </summary>
+                          <div class="bg-white py-2 px-2">
+                            <p class="text-black text-sm text-medium">Content for Sourcing & Production</p>
+                          </div>
+                        </details>
+                      </li>
+                    </ul>
+                  </details>
+                </a>
                 <a href="#" class="nav-link text-white xl:text-base text-sm font-medium hover:underline">ESG</a>
                 <a href="#" class="nav-link text-white xl:text-base text-sm font-medium hover:underline">Contact</a>
+
+
+
+
+
               </div>
               <!-- Secondary Navbar items -->
               <div class="hidden lg:flex gap-[10px] items-center">
                 <div class="relative w-full">
                   <input type="text" placeholder="Search..."
-                    class="w-full pr-10 pl-5 py-2 rounded-full bg-[#FFFFFF26] text-white placeholder:text-[#DADADA] xl:placeholder:text-base placeholder:text-sm focus:outline-none border border-[#FFFFFF66] focus:ring-[#FFFFFF]" />
+                    class="w-full pr-10 pl-5 py-2 rounded-full bg-[#FFFFFF26] text-white placeholder:text-[#DADADA] xl:placeholder:text-base placeholder:text-sm focus:outline-none border border-[#FFFFFF66] focus:border-[#FFFFFF66] focus:ring-0" />
                   <img src="./assets/images/search.svg" alt="search icon"
                     class="absolute right-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 h-[16px] w-[16px]" />
                 </div>
                 <div>
                   <button
-                    class="h-[40px] w-[40px] flex items-center justify-center rounded-full bg-[#FFFFFF26] border border-[#FFFFFF66] transition-transform duration-300 hover:scale-105">
-                    <img src="./assets/images/shopping-bag.svg" alt="shopping-bag" class="h-[18px] w-[18px]" />
+                    class="h-[40px] w-[40px] flex items-center justify-center rounded-full bg-[#FFFFFF26] border border-[#FFFFFF66] group hover:scale-105">
+                    <img src="./assets/images/shopping-bag.svg" alt="shopping-bag" class="h-[18px] w-[18px] group-hover:scale-105" />
                   </button>
                 </div>
               </div>
@@ -104,7 +198,8 @@
       <!-- mobile menu -->
       <div
         class="hidden mobile-menu mt-6 bg-[#FFFFFF26] backdrop-blur-lg absolute w-full top-[70px] max-xs:top-[50px] h-[calc(100vh-90px)] max-xs:h-[calc(100vh-70px)] z-[100]">
-        <ul class="py-[20px] w-full pl-[16px] md:pl-[40px] sm:pl-[30px]">
+        <div class="container">
+        <ul class="py-[20px] w-full">
           <li>
             <a href="#"
               class="block text-white max-xs:text-sm text-base text-left px-2 py-2 text-black hover:underline">Products</a>
@@ -114,17 +209,106 @@
               Popular</a>
           </li>
           <li>
-            <a href="#" class="block text-white max-xs:text-sm text-base px-2 py-2 hover:underline">Capabilities
-              Label</a>
-          </li>
-          <li>
             <a href="#" class="block text-white max-xs:text-sm text-base text-left px-2 py-2 hover:underline">ESG</a>
           </li>
           <li>
             <a href="#"
               class="block text-white max-xs:text-sm text-base text-left px-2 py-2 hover:underline">Contact</a>
           </li>
+          <li class="relative">
+            <a>
+              <!-- Main Dropdown -->
+              <details id="mainDropdown1">
+                <summary class="flex items-center cursor-pointer hover:!bg-transparent">
+                  <span
+                    class="block text-white max-xs:text-sm text-base px-2 py-2 hover:underline">Capabilities</span>
+                  <div class="ml-2 w-4 h-4 transition-transform transform rotate-0" id="chevronwrapper1">
+                    <img src="./assets/images/chevron-right.svg" alt="chevron right" />
+                  </div>
+                </summary>
+                <ul
+                  class="absolute top-[40px] py-2 px-2 rounded-lg bg-white w-full ">
+                  <li>
+                    <!-- Nested Dropdown 1 -->
+                    <details id="nesteddropdown1">
+                      <summary
+                        class="flex items-center justify-between pl-[10px] pr-[20px] py-[8px] cursor-pointer rounded-lg hover:bg-[#1FA1DC] hover:text-white">
+                        <span class="font-medium text-sm">Custom Decorations</span>
+                        <div class="ml-2 w-4 h-4 transition-transform transform rotate-0" id="chevronwrapper2">
+                          <img src="./assets/images/chevron-right-black.svg" alt="chevron right" class="chevron" />
+                        </div>
+                      </summary>
+                      <div class="bg-white py-2 px-2">
+                        <p class="text-black text-sm text-medium">Content for Custom Decorations</p>
+                      </div>
+                    </details>
+                  </li>
+                  <li>
+                    <!-- Nested Dropdown 2 -->
+                    <details id="nesteddropdown2">
+                      <summary
+                        class="flex items-center justify-between pl-[10px] pr-[20px] py-[8px] cursor-pointer rounded-lg hover:bg-[#1FA1DC] hover:text-white">
+                        <span class="font-medium text-sm">Injection Molding</span>
+                        <div class="ml-2 w-4 h-4 transition-transform transform rotate-0" id="chevronwrapper3">
+                          <img src="./assets/images/chevron-right-black.svg" alt="chevron right" class="chevron" />
+                        </div>
+                      </summary>
+                      <div class="bg-white py-2 px-2">
+                        <p class="text-black text-sm text-medium">Content for Injection Molding</p>
+                      </div>
+                    </details>
+                  </li>
+                  <li>
+                    <!-- Nested Dropdown 3 -->
+                    <details id="nesteddropdown3">
+                      <summary
+                        class="flex items-center justify-between pl-[10px] pr-[20px] py-[8px] cursor-pointer rounded-lg hover:bg-[#1FA1DC] hover:text-white">
+                        <span class="font-medium text-sm">APG Capabilities</span>
+                        <div class="ml-2 w-4 h-4 transition-transform transform rotate-0" id="chevronwrapper4">
+                          <img src="./assets/images/chevron-right-black.svg" alt="chevron right" class="chevron" />
+                        </div>
+                      </summary>
+                      <div class="bg-white py-2 px-2">
+                        <p class="text-black text-sm text-medium">Content for APG Capabilities</p>
+                      </div>
+                    </details>
+                  </li>
+                  <li>
+                    <!-- Nested Dropdown 4 -->
+                    <details id="nesteddropdown4">
+                      <summary
+                        class="flex items-center justify-between pl-[10px] pr-[20px] py-[8px] cursor-pointer rounded-lg hover:bg-[#1FA1DC] hover:text-white">
+                        <span class="font-medium text-sm">Innovation & Technology</span>
+                        <div class="ml-2 w-4 h-4 transition-transform transform rotate-0" id="chevronwrapper5">
+                          <img src="./assets/images/chevron-right-black.svg" alt="chevron right" class="chevron" />
+                        </div>
+                      </summary>
+                      <div class="bg-white py-2 px-2">
+                        <p class="text-black text-sm text-medium">Content for Innovation & Technology</p>
+                      </div>
+                    </details>
+                  </li>
+                  <li>
+                    <!-- Nested Dropdown 5 -->
+                    <details id="nesteddropdown5">
+                      <summary
+                        class="flex items-center justify-between pl-[10px] pr-[20px] py-[8px] cursor-pointer rounded-lg hover:bg-[#1FA1DC] hover:text-white">
+                        <span class="font-medium text-sm">Sourcing & Production</span>
+                        <div class="ml-2 w-4 h-4 transition-transform transform rotate-0" id="chevronwrapper6">
+                          <img src="./assets/images/chevron-right-black.svg" alt="chevron right" class="chevron" />
+                        </div>
+                      </summary>
+                      <div class="bg-white py-2 px-2">
+                        <p class="text-black text-sm text-medium">Content for Sourcing & Production</p>
+                      </div>
+                    </details>
+                  </li>
+                </ul>
+              </details>
+            </a>
+          </li>
         </ul>
+      </div>
       </div>
     </nav>
 
@@ -641,7 +825,7 @@
               Phone:
             </h6>
             <p class="text-apg-gray md:text-base text-sm font-regular italic lg:mt-[16px] mt-[8px]">
-              OFFICE: (626) 385-5858
+              OFFICE: <a href="tel:-'(626) 385-5858">(626) 385-5858</a>
             </p>
             <p class="text-apg-gray md:text-base text-sm font-regular italic lg:mt-[16px] mt-[8px]">
               FAX: (626) 385-5848
@@ -650,7 +834,7 @@
               Email:
             </h6>
             <p class="text-apg-gray md:text-base text-sm font-regular italic lg:mt-[16px] mt-[8px]">
-              sales@apackaginggroup.com
+              <a href="mailto:sales@apackaginggroup.com">sales@apackaginggroup.com</a>
             </p>
           </div>
         </div>

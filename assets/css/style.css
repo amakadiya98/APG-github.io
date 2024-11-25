@@ -45,6 +45,16 @@ body {
   max-width: 1430px !important;
 }
 
+details summary:hover .chevron {
+  filter: invert(1);
+}
+
+details summary:hover {
+  background-color: #007bff; 
+  color: white;
+}
+
+
 
 
 

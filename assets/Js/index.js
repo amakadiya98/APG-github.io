@@ -15,6 +15,8 @@ tailwind.config = {
     }
   }
 
+  // searchbar 
+
   function toggleSearchBar() {
     const searchBar = document.getElementById('search-bar');
     const searchIcon = document.getElementById('search-icon');
@@ -44,6 +46,7 @@ tailwind.config = {
     }
   });
 
+  // header responsive 
   const btn = document.querySelector("button.mobile-menu-button");
   const menu = document.querySelector(".mobile-menu");
   const menuIcon = document.getElementById("menu-icon");
@@ -58,7 +61,62 @@ tailwind.config = {
     body.classList.toggle("overflow-hidden");
   });
 
-  
+  // nested dropdown 
+
+  function rotateChevron(detailId, chevronWrapperId) {
+    const detailsElement = document.getElementById(detailId);
+    const chevronWrapperElement = document.getElementById(chevronWrapperId);
+
+    detailsElement.addEventListener('toggle', function () {
+      if (detailsElement.open) {
+        chevronWrapperElement.classList.add('rotate-90');
+      } else {
+        chevronWrapperElement.classList.remove('rotate-90');
+      }
+    });
+  }
+
+  rotateChevron('mainDropdown', 'chevronWrapper1');
+  rotateChevron('nestedDropdown1', 'chevronWrapper2');
+  rotateChevron('nestedDropdown2', 'chevronWrapper3');
+  rotateChevron('nestedDropdown3', 'chevronWrapper4');
+  rotateChevron('nestedDropdown4', 'chevronWrapper5');
+  rotateChevron('nestedDropdown5', 'chevronWrapper6');
+
+  rotateChevron('mainDropdown1', 'chevronwrapper1');
+  rotateChevron('nesteddropdown1', 'chevronwrapper2');
+  rotateChevron('nesteddropdown2', 'chevronwrapper3');
+  rotateChevron('nesteddropdown3', 'chevronwrapper4');
+  rotateChevron('nesteddropdown4', 'chevronwrapper5');
+  rotateChevron('nesteddropdown5', 'chevronwrapper6');
+
+
+  document.getElementById('mainDropdown').addEventListener('toggle', function () {
+    if (this.open) {
+      document.querySelectorAll('details[id^="nestedDropdown"]').forEach(function (nested) {
+        nested.removeAttribute('open'); 
+      });
+    }
+  });
+
+document.addEventListener('click', function(event) {
+  const mainDropdown = document.getElementById('mainDropdown');
+  const nestedDropdowns = document.querySelectorAll('details[id^="nesteddropdown"]');
+
+  if (!mainDropdown.contains(event.target)) {
+    mainDropdown.removeAttribute('open');
+  }
+
+  nestedDropdowns.forEach(function(nestedDropdown) {
+    if (!nestedDropdown.contains(event.target)) {
+      nestedDropdown.removeAttribute('open');
+    }
+  });
+
+});
+
+
+// carousel 
 $(document).ready(function () {
   $(".owl-carousel").owlCarousel({
     loop: true,
