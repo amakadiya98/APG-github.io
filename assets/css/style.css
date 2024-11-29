@@ -2,7 +2,7 @@
   font-family: 'Graphik';
   font-style: normal;
   font-weight: 300;
-  src: url('../fonts/GraphikLight.otfs') format('trueType');
+  src: url('../fonts/GraphikLight.otf') format('trueType');
 }
 
 @font-face {

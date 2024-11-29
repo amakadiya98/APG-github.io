@@ -142,8 +142,8 @@ $(document).ready(function () {
     loop: true,
     center: true,
     autoplay: true,
-    autoplayTimeout: 3000,
-    autoplaySpeed: 1000,
+    autoplayTimeout: 2000,
+    autoplaySpeed: 2000,
     autoplayHoverPause: true,
     responsive: {
       0: {
@@ -155,9 +155,13 @@ $(document).ready(function () {
         margin: 24,
       },
       1024: {
-        items: 2.25,
-        margin: 50
+        items: 2.5,
+        margin: 28
       },
+      1280: {
+        items: 3.4,
+        margin: 32
+      }
     },
   });
 });
