@@ -8,6 +8,7 @@ tailwind.config = {
       screens: {
         '2xl': '1560px',
         'xl': '1280px',
+        'max-lg': { max: '1025px' },
         'max-md': { max: '767px' },
         'max-xs': { max: '520px' }
       },
@@ -164,6 +165,111 @@ $(document).ready(function () {
       }
     },
   });
+});
+
+
+// INTERACTIVE MAP 
+
+const width = window.innerWidth, height = window.innerHeight;
+const scale = width < 1025 ? 80 : 150;
+const projection = d3.geoMercator().scale(scale ).translate([width / 2, height / 2]); 
+const path = d3.geoPath().projection(projection);
+const svg = d3.select(".map");
+const tooltip = d3.select(".tooltip");
+const tooltipText = tooltip.select(".tooltip-text");
+
+d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then(data => {
+    // Draw the map
+    svg.selectAll("path")
+        .data(data.features)
+        .enter()
+        .append("path")
+        .attr("d", path)
+        .attr("fill", "#e7eef5");
+
+    const locations = [
+        { name: "Azusa, California (USA)", coords: [-117.9075627, 34.1336186] },
+        // { name: "Corona, California (USA)", coords: [-117.56644, 33.87529] },
+        { name: "Defiance, Ohio (USA)", coords: [-84.35533, 41.2842] },
+        { name: "Guangzhou, China", coords: [113.264385, 23.12911] },
+        { name: "Ningbo, China", coords: [121.55027, 29.87456] },
+        { name: "São Paulo, Brazil", coords: [-46.633308, -23.55052] },
+        { name: "Spain", coords: [-3.70379, 40.41678] },
+        { name: "Italy", coords: [12.49636, 41.90278] }
+    ];
+
+    const bigCountries = [
+    "Russia", "Canada", "United States", "China", "Brazil", "Australia", 
+    "India", "Argentina", "Kazakhstan", "Algeria"
+];
+d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then(data => {
+    svg.selectAll("path")
+        .data(data.features)
+        .enter()
+        .append("path")
+        .attr("d", path)
+        .attr("fill", "#e7eef5");
+    const filteredCountries = data.features.filter(d => bigCountries.includes(d.properties.name));
+    svg.selectAll("text")
+        .data(filteredCountries)
+        .enter()
+        .append("text")
+        .attr("x", d => {
+            const centroid = path.centroid(d);
+            return centroid[0];
+        })
+        .attr("y", d => {
+            const centroid = path.centroid(d);
+            return centroid[1];
+        })
+        .attr("dy", ".35em")
+        .text(d => d.properties.name)
+        .attr("fill", "#9cc5e1")
+        .style("font-size", "12px")
+        .style("font-weight", "regular")
+        .style("font-family", "Graphik")
+        .style("text-anchor", "middle");
+});
+
+    const markers = svg.selectAll("g.marker")
+        .data(locations)
+        .enter()
+        .append("g")
+        .attr("class", "marker");
+
+    markers.append("circle")
+        .attr("cx", d => projection(d.coords)[0])
+        .attr("cy", d => projection(d.coords)[1])
+        .attr("r", 12)
+        .attr("fill", "#91BDDC")
+        .attr("class", "hover-circle");
+
+    markers.append("circle")
+        .attr("cx", d => projection(d.coords)[0])
+        .attr("cy", d => projection(d.coords)[1])
+        .attr("r", 5)
+        .attr("fill", "#066cb3")
+        .on("mouseover", function (event, d) {
+            tooltip.style("opacity", 1)
+                .style("left", (event.pageX + 10) + "px")
+                .style("top", (event.pageY - 20) + "px");
+
+            tooltipText.text(d.name); 
+        })
+        .on("mousemove", function (event) {
+            tooltip.style("left", (event.pageX + 10) + "px")
+                .style("top", (event.pageY - 20) + "px");
+        })
+        .on("mouseout", function () {
+            tooltip.style("opacity", 0);
+
+            const azusa = locations[0];
+            tooltip.style("opacity", 1)
+                .style("left", projection(azusa.coords)[0] + 10 + "px")
+                .style("top", projection(azusa.coords)[1] - 20 + "px");
+            tooltipText.text(azusa.name); 
+        });
+
 });
 
 

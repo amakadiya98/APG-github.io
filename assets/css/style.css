@@ -54,6 +54,60 @@ details summary:hover {
   color: white;
 }
 
+/* MAP  */
+
+.map {
+  width: 100%;
+  height: 750px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F0F5F9 100%);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 80px), 0 100%);
+}
+
+.map svg path{
+   position: relative;
+   z-index: 1;
+}
+
+.tooltip {
+  position: absolute;
+  background: #FFFFFF;
+  color: #000000;
+  padding: 10px;
+  border-radius: 5px;
+  pointer-events: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  max-width: 120px;
+  box-shadow: 2.5px 4.33px 7.75px 0px #07487133;
+  transform: translate(-60%, -100%); 
+  opacity: 0; 
+  z-index: 1000;
+}
+
+.tooltip .location-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  bottom: -10px; 
+  left: 50%;
+  margin-left: -5px; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid #FFFFFF; 
+}
+
+@media (max-width: 1025px){
+  .map{
+    clip-path: none;
+    height: 500px;
+  }
+}
 
 
 
