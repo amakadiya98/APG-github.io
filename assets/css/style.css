@@ -78,7 +78,7 @@ details summary:hover {
   font-size: 14px;
   display: flex;
   align-items: center;
-  max-width: 120px;
+  max-width: 160px;
   box-shadow: 2.5px 4.33px 7.75px 0px #07487133;
   transform: translate(-60%, -100%); 
   opacity: 0; 
@@ -105,12 +105,26 @@ details summary:hover {
 @media (max-width: 1025px){
   .map{
     clip-path: none;
-    height: 500px;
+    height:650px;
   }
 }
 
+@media (max-width: 520px){
+  .map{
+    height:550px;
+  }
+}
 
+/* product card  */
 
+.product-card{
+  box-shadow: 1.5px 2.6px 15.49px 0px #0000001a
+}
+
+.product-card:hover{
+  box-shadow: 1.5px 2.6px 20px 0px #00000060;
+  transition: box-shadow 0.3s ease;
+}
 
 
 
